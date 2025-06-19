@@ -1,0 +1,42 @@
+﻿@page
+@using CRUD.Model
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Записная книжка</h1>
+
+    <a asp-page="./Create">Создать новую запись</a>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Почта</th>
+            <th scope="col">Управление</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for (var i = 0; i < @Model.Persons.Count; i++)
+        {
+            <tr>
+                <th scope="row">@(i+1)</th>
+                <td>@Model.Persons[i].LastName</td>
+                <td>@Model.Persons[i].FirstName</td>
+                <td>@Model.Persons[i].PhoneNumber</td>
+                <td>@Model.Persons[i].Email</td>
+                <td>
+                    <a asp-page="./Update" asp-route-id="@Model.Persons[i].Id">Изменить</a>
+                    <a asp-page="./Delete" asp-route-id="@Model.Persons[i].Id">Удалить</a>
+                </td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+    
+</div>

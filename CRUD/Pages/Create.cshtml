@@ -1,0 +1,42 @@
+﻿@page
+@model CRUD.Pages.Create
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <form method="post" asp-page="Create">
+        <div class="form-group">
+            <input type="hidden" asp-for="Person.Id"/>
+        </div>
+        <div class="form-group">
+            <a>Фамилия</a><br>
+            <input type="text" asp-for="Person.LastName"/>
+        </div>
+        <div class="form-group">
+            <a>Имя</a><br>
+            <input type="text" asp-for="Person.FirstName"/>
+        </div>
+        <div class="form-group">
+            <a>Номер телефона</a><br>
+            <input type="text" asp-for="Person.PhoneNumber"/>
+        </div>
+        <div class="form-group">
+            <a>Почта</a><br>
+            <input type="text" asp-for="Person.Email"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Создать">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@page
+@model CRUD.Pages.Update
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Изменение данных</title>
+</head>
+<body>
+<div>
+    <form method="post" asp-page="Update">
+        <div class="form-group">
+            <input type="hidden" asp-for="person.Id"/>
+        </div>
+        <div class="form-group">
+            <a>Фамилия</a><br>
+            <input type="text" asp-for="person.LastName"/>
+        </div>
+        <div class="form-group">
+            <a>Имя</a><br>
+            <input type="text" asp-for="person.FirstName"/>
+        </div>
+        <div class="form-group">
+            <a>Номер телефона</a><br>
+            <input type="text" asp-for="person.PhoneNumber"/>
+        </div>
+        <div class="form-group">
+            <a>Почта</a><br>
+            <input type="text" asp-for="person.Email"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Редактировать">
+        </div>
+    </form>
+</div>
+</body>
+</html>
